@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DocManager - Document Management System</title>
+  
+  <!-- Use Tailwind CSS without configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Google Fonts - Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    
+    .primary-bg {
+      background-color: #005999;
+    }
+    
+    .primary-text {
+      color: #005999;
+    }
+    
+    .primary-border {
+      border-color: #005999;
+    }
+    
+    .primary-hover:hover {
+      background-color: #004680;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    .transition-all {
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <!-- Navigation Header -->
+  <header class="primary-bg text-white shadow-md">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center space-x-2">
+          <span class="material-icons text-2xl">description</span>
+          <span class="text-xl font-bold">DocManager</span>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-6">
+          <a href="#" class="flex items-center px-3 py-2 rounded-md bg-opacity-30 bg-black text-white">
+            <span class="material-icons mr-1">dashboard</span>
+            <span>Dashboard</span>
+          </a>
+          <a href="#" class="flex items-center px-3 py-2 hover:bg-opacity-30 hover:bg-black rounded-md">
+            <span class="material-icons mr-1">folder</span>
+            <span>Documents</span>
+          </a>
+          <a href="#" class="flex items-center px-3 py-2 hover:bg-opacity-30 hover:bg-black rounded-md">
+            <span class="material-icons mr-1">shopping_cart</span>
+            <span>Orders</span>
+          </a>
+          <a href="#" class="flex items-center px-3 py-2 hover:bg-opacity-30 hover:bg-black rounded-md">
+            <span class="material-icons mr-1">request_quote</span>
+            <span>Quotes</span>
+          </a>
+          <a href="#" class="flex items-center px-3 py-2 hover:bg-opacity-30 hover:bg-black rounded-md">
+            <span class="material-icons mr-1">assignment</span>
+            <span>Projects</span>
+          </a>
+        </nav>
+        
+        <div class="flex items-center space-x-2">
+          <button class="p-2 rounded-full hover:bg-opacity-30 hover:bg-black">
+            <span class="material-icons">notifications</span>
+          </button>
+          <button class="p-2 rounded-full hover:bg-opacity-30 hover:bg-black">
+            <span class="material-icons">person</span>
+          </button>
+          <button class="md:hidden p-2 rounded-full hover:bg-opacity-30 hover:bg-black">
+            <span class="material-icons">menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8">
+    <!-- Welcome Section -->
+    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+        <div>
+          <h1 class="text-2xl font-bold text-gray-800 flex items-center">
+            <span class="material-icons mr-2">wave</span>
+            Welcome back, John!
+          </h1>
+          <p class="text-gray-600 mt-1">Here's what's happening with your documents today.</p>
+        </div>
+        <div class="mt-4 md:mt-0">
+          <button class="primary-bg primary-hover text-white px-4 py-2 rounded-md flex items-center">
+            <span class="material-icons mr-1">add</span>
+            Add Document
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <!-- Documents Stat -->
+      <div class="bg-white rounded-lg shadow-md p-6 transition-all card-hover">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm text-gray-500 mb-1">Documents</p>
+            <p class="text-3xl font-bold primary-text">128</p>
+          </div>
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+            <span class="material-icons primary-text">folder</span>
+          </div>
+        </div>
+        <div class="mt-4 flex items-center text-sm text-green-600">
+          <span class="material-icons text-sm mr-1">arrow_upward</span>
+          <span>12% from last month</span>
+        </div>
+      </div>
+      
+      <!-- Orders Stat -->
+      <div class="bg-white rounded-lg shadow-md p-6 transition-all card-hover">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm text-gray-500 mb-1">Orders</p>
+            <p class="text-3xl font-bold primary-text">42</p>
+          </div>
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+            <span class="material-icons primary-text">shopping_cart</span>
+          </div>
+        </div>
+        <div class="mt-4 flex items-center text-sm text-red-600">
+          <span class="material-icons text-sm mr-1">arrow_downward</span>
+          <span>3% from last month</span>
+        </div>
+      </div>
+      
+      <!-- Quotes Stat -->
+      <div class="bg-white rounded-lg shadow-md p-6 transition-all card-hover">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm text-gray-500 mb-1">Quotes</p>
+            <p class="text-3xl font-bold primary-text">36</p>
+          </div>
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+            <span class="material-icons primary-text">request_quote</span>
+          </div>
+        </div>
+        <div class="mt-4 flex items-center text-sm text-green-600">
+          <span class="material-icons text-sm mr-1">arrow_upward</span>
+          <span>18% from last month</span>
+        </div>
+      </div>
+      
+      <!-- Projects Stat -->
+      <div class="bg-white rounded-lg shadow-md p-6 transition-all card-hover">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm text-gray-500 mb-1">Projects</p>
+            <p class="text-3xl font-bold primary-text">8</p>
+          </div>
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+            <span class="material-icons primary-text">assignment</span>
+          </div>
+        </div>
+        <div class="mt-4 flex items-center text-sm text-gray-500">
+          <span>No change from last month</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Documents and Contact Form -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Recent Documents -->
+      <div class="lg:col-span-2">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+            <h2 class="text-lg font-semibold text-gray-800 flex items-center">
+              <span class="material-icons mr-2">description</span>
+              Recent Documents
+            </h2>
+            <button class="primary-text hover:underline text-sm font-medium">View All</button>
+          </div>
+          
+          <div class="divide-y divide-gray-200">
+            <!-- Document 1 -->
+            <div class="p-4 hover:bg-gray-50">
+              <div class="flex items-start">
+                <div class="bg-blue-100 p-2 rounded-full mr-4">
+                  <span class="material-icons primary-text">description</span>
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-medium">Q1 Financial Report.docx</h3>
+                  <p class="text-sm text-gray-500">Modified 2 hours ago</p>
+                </div>
+                <div class="flex space-x-2">
+                  <button class="p-1 rounded-full primary-bg text-white">
+                    <span class="material-icons text-sm">edit</span>
+                  </button>
+                  <button class="p-1 rounded-full primary-bg text-white">
+                    <span class="material-icons text-sm">share</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Document 2 -->
+            <div class="p-4 hover:bg-gray-50">
+              <div class="flex items-start">
+                <div class="bg-red-100 p-2 rounded-full mr-4">
+                  <span class="material-icons text-red-600">picture_as_pdf</span>
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-medium">Project Proposal.pdf</h3>
+                  <p class="text-sm text-gray-500">Modified yesterday</p>
+                </div>
+                <div class="flex space-x-2">
+                  <button class="p-1 rounded-full primary-bg text-white">
+                    <span class="material-icons text-sm">edit</span>
+                  </button>
+                  <button class="p-1 rounded-full primary-bg text-white">
+                    <span class="material-icons text-sm">share</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Document 3 -->
+            <div class="p-4 hover:bg-gray-50">
+              <div class="flex items-start">
+                <div class="bg-green-100 p-2 rounded-full mr-4">
+                  <span class="material-icons text-green-600">insert_chart</span>
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-medium">Analytics Dashboard.xlsx</h3>
+                  <p class="text-sm text-gray-500">Modified 3 days ago</p>
+                </div>
+                <div class="flex space-x-2">
+                  <button class="p-1 rounded-full primary-bg text-white">
+                    <span class="material-icons text-sm">edit</span>
+                  </button>
+                  <button class="p-1 rounded-full primary-bg text-white">
+                    <span class="material-icons text-sm">share</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Document 4 -->
+            <div class="p-4 hover:bg-gray-50">
+              <div class="flex items-start">
+                <div class="bg-blue-100 p-2 rounded-full mr-4">
+                  <span class="material-icons text-blue-600">slideshow</span>
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-medium">Client Presentation.pptx</h3>
+                  <p class="text-sm text-gray-500">Modified 1 week ago</p>
+                </div>
+                <div class="flex space-x-2">
+                  <button class="p-1 rounded-full primary-bg text-white">
+                    <span class="material-icons text-sm">edit</span>
+                  </button>
+                  <button class="p-1 rounded-full primary-bg text-white">
+                    <span class="material-icons text-sm">share</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contact Form -->
+      <div class="lg:col-span-1">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="px-6 py-4 border-b border-gray-200">
+            <h2 class="text-lg font-semibold text-gray-800 flex items-center">
+              <span class="material-icons mr-2">contact_mail</span>
+              Contact Support
+            </h2>
+          </div>
+          
+          <div class="p-6">
+            <form>
+              <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                <div class="flex">
+                  <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500">
+                    <span class="material-icons text-sm">person</span>
+                  </span>
+                  <input type="text" id="name" class="flex-1 min-w-0 block w-full px-3 py-2 rounded-none rounded-r-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="John Doe">
+                </div>
+              </div>
+              
+              <div class="
