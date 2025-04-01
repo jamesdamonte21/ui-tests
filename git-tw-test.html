@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Material 3 with Tailwind Demo</title>
+  
+  <!-- Tailwind CSS CDN - latest version -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+  <!-- Open Sans Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style type="text/tailwindcss">
+    @theme {
+      --color-primary: #005999;
+    }
+    
+    @layer base {
+      :root {
+        --color-primary-50: #e6f0f7;
+        --color-primary-100: #cce0ef;
+        --color-primary-200: #99c2df;
+        --color-primary-300: #66a3cf;
+        --color-primary-400: #3385bf;
+        --color-primary-500: #005999;
+        --color-primary-600: #004d87;
+        --color-primary-700: #004075;
+        --color-primary-800: #003462;
+        --color-primary-900: #002750;
+      }
+      
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+  <div class="container mx-auto px-4 py-8">
+    <!-- Header -->
+    <header class="mb-8">
+      <h1 class="text-3xl font-medium text-gray-900 mb-2">Material 3 Demo</h1>
+      <p class="text-gray-600">A simple demo using Material 3 components with Tailwind CSS</p>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Form Section -->
+      <section class="bg-white rounded-xl shadow-md p-6">
+        <h2 class="text-xl font-medium text-gray-900 mb-4">Contact Form</h2>
+        
+        <form>
+        <!-- Name Field -->
+<div class="mb-4">
+  <div class="relative w-full">
+    <input type="text" 
+           class="peer w-full h-full bg-transparent text-gray-700 font-sans font-normal outline-none border-b border-gray-300 focus:border-[#005999] p-2 transition-all" 
+           placeholder=" " />
+    <label class="absolute left-0 -top-3.5 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-[#005999] peer-focus:text-sm">
+      Name
+    </label>
+  </div>
+</div>
+
+<!-- Email Field -->
+<div class="mb-4">
+  <div class="relative w-full">
+    <input type="email" 
+           class="peer w-full h-full bg-transparent text-gray-700 font-sans font-normal outline-none border-b border-gray-300 focus:border-[#005999] p-2 transition-all" 
+           placeholder=" " />
+    <label class="absolute left-0 -top-3.5 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-[#005999] peer-focus:text-sm">
+      Email
+    </label>
+  </div>
+</div>
+
+<!-- Message Field -->
+<div class="mb-6">
+  <div class="relative w-full">
+    <textarea 
+      class="peer w-full h-full min-h-[100px] bg-transparent text-gray-700 font-sans font-normal outline-none border-b border-gray-300 focus:border-[#005999] p-2 transition-all" 
+      placeholder=" "></textarea>
+    <label class="absolute left-0 -top-3.5 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-[#005999] peer-focus:text-sm">
+      Message
+    </label>
+  </div>
+</div>
+          
+          <!-- Submit Button -->
+          <button type="submit" class="bg-[#005999] text-white font-medium rounded-lg py-2 px-4 inline-flex items-center justify-center shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#005999]/50 transition-all">
+            Submit
+          </button>
+        </form>
+      </section>
+      
+      <!-- Button Showcase Section -->
+      <section class="bg-white rounded-xl shadow-md p-6">
+        <h2 class="text-xl font-medium text-gray-900 mb-4">Button Styles</h2>
+        
+        <div class="flex flex-col gap-4">
+          <!-- Filled Button -->
+          <div>
+            <h3 class="text-sm font-medium text-gray-700 mb-2">Filled Button</h3>
+            <button class="bg-[#005999] text-white font-medium rounded-lg py-2 px-4 inline-flex items-center justify-center shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#005999]/50 transition-all">
+              Filled Button
+            </button>
+          </div>
+          
+          <!-- Outlined Button -->
+          <div>
+            <h3 class="text-sm font-medium text-gray-700 mb-2">Outlined Button</h3>
+            <button class="bg-transparent border border-[#005999] text-[#005999] font-medium rounded-lg py-2 px-4 inline-flex items-center justify-center hover:bg-[#005999]/10 focus:outline-none focus:ring-2 focus:ring-[#005999]/50 transition-all">
+              Outlined Button
+            </button>
+          </div>
+          
+          <!-- Text Button -->
+          <div>
+            <h3 class="text-sm font-medium text-gray-700 mb-2">Text Button</h3>
+            <button class="bg-transparent text-[#005999] font-medium rounded-lg py-2 px-4 inline-flex items-center justify-center hover:bg-[#005999]/10 focus:outline-none focus:ring-2 focus:ring-[#005999]/50 transition-all">
+              Text Button
+            </button>
+          </div>
+          
+          <!-- Elevated Button -->
+          <div>
+            <h3 class="text-sm font-medium text-gray-700 mb-2">Elevated Button</h3>
+            <button class="bg-white text-[#005999] font-medium rounded-lg py-2 px-4 inline-flex items-center justify-center shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#005999]/50 transition-all">
+              Elevated Button
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="mt-12 text-center text-gray-500 text-sm">
+      <p>Material 3 with Tailwind CSS Demo &copy; 2025</p>
+    </footer>
+  </div>
+</body>
+</html>
